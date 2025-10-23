@@ -24,7 +24,7 @@ export const Header = () => {
           <div className="p-2 rounded-lg bg-gradient-to-br from-primary to-accent">
             <GraduationCap className="h-6 w-6 text-primary-foreground" />
           </div>
-          <span className="hidden sm:inline-block">Research Project</span>
+          <span className="hidden sm:inline-block">Intelibridge</span>
         </Link>
 
         {/* Desktop Navigation */}

@@ -6,38 +6,67 @@ export default function Milestones() {
   const milestones = [
     {
       title: "Project Proposal",
-      date: "February 2025",
-      marks: "10%",
-      status: "completed",
-      description: "Initial project proposal including problem statement, objectives, and methodology",
-    },
-    {
-      title: "Progress Presentation 1",
-      date: "March 2025",
-      marks: "15%",
-      status: "completed",
-      description: "First progress review covering literature survey and initial design",
-    },
-    {
-      title: "Progress Presentation 2",
-      date: "April 2025",
-      marks: "15%",
-      status: "in-progress",
-      description: "Second progress review demonstrating implementation progress",
-    },
-    {
-      title: "Final Assessment",
-      date: "May 2025",
-      marks: "40%",
+      date: "February 2024",
+      marks: "6",
+      percentage: "6%",
       status: "pending",
-      description: "Final project demonstration and documentation submission",
+      description: "A Project Proposal is presented to potential sponsors or clients to receive funding or get your project approved.",
     },
     {
-      title: "Viva Voce",
-      date: "May 2025",
-      marks: "20%",
+      title: "Progress Presentation I",
+      date: "May 2024",
+      marks: "6",
+      percentage: "6%",
       status: "pending",
-      description: "Oral examination and defense of research work",
+      description: "Reviews the 50% completion status of the project, revealing any gaps or inconsistencies in the design.",
+    },
+    {
+      title: "Research Paper",
+      date: "June 2024",
+      marks: "10",
+      percentage: "10%",
+      status: "pending",
+      description: "Describes the contribution to existing knowledge, recognizing all referenced work.",
+    },
+    {
+      title: "Progress Presentation II",
+      date: "September 2024",
+      marks: "18",
+      percentage: "18%",
+      status: "pending",
+      description: "Reviews the 90% completion status of the project, accompanied by a poster presentation.",
+    },
+    {
+      title: "Final Report",
+      date: "August 2024",
+      marks: "19",
+      percentage: "19%",
+      status: "pending",
+      description: "The final report evaluates the completed project done throughout the year. Marks mentioned include individual & group reports and the final report.",
+    },
+    {
+      title: "Website Assessment",
+      date: "October 2024",
+      marks: "2",
+      percentage: "2%",
+      status: "pending",
+      description: "The website helps to promote our research project and reveals all details related to the project.",
+    },
+    {
+      title: "Final Presentation & Viva",
+      date: "October 2024",
+      marks: "20",
+      percentage: "20%",
+      status: "pending",
+      description: "The final report and deliverables are submitted, with a final presentation marking the project's end.",
+    },
+    {
+      title: "Logbook",
+      date: "November 2024",
+      marks: "3",
+      percentage: "3%",
+      status: "pending",
+      description: "Status of the project is validated through the logbook. This also includes status documents 1 & 2.",
     },
   ];
 
@@ -71,7 +100,7 @@ export default function Milestones() {
             Project Milestones
           </h1>
           <p className="text-lg text-muted-foreground">
-            Track the progress and key assessments throughout the research project
+            Key events that demonstrate the progress and completion of the project.
           </p>
         </div>
 
@@ -97,9 +126,11 @@ export default function Milestones() {
                           <Clock className="h-4 w-4" />
                           {milestone.date}
                         </span>
-                        <span className="font-semibold text-primary">
-                          {milestone.marks} of total marks
-                        </span>
+                        <div className="font-semibold text-primary">
+                          Marks Allocated: {milestone.marks}
+                          <br />
+                          {milestone.percentage}
+                        </div>
                       </CardDescription>
                     </div>
                   </div>
@@ -120,15 +151,15 @@ export default function Milestones() {
           <CardContent>
             <div className="grid sm:grid-cols-3 gap-4">
               <div className="text-center">
-                <p className="text-3xl font-bold text-green-500">2</p>
+                <p className="text-3xl font-bold text-green-500">0</p>
                 <p className="text-sm text-muted-foreground">Completed</p>
               </div>
               <div className="text-center">
-                <p className="text-3xl font-bold text-accent">1</p>
+                <p className="text-3xl font-bold text-accent">0</p>
                 <p className="text-sm text-muted-foreground">In Progress</p>
               </div>
               <div className="text-center">
-                <p className="text-3xl font-bold text-muted-foreground">2</p>
+                <p className="text-3xl font-bold text-muted-foreground">8</p>
                 <p className="text-sm text-muted-foreground">Pending</p>
               </div>
             </div>

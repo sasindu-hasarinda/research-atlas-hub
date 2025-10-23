@@ -1,4 +1,10 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Presentation, Download, Eye } from "lucide-react";
@@ -11,7 +17,10 @@ export default function Presentations() {
       slides: 25,
       duration: "20 min",
       status: "completed",
-      description: "Initial project proposal covering problem statement, objectives, and approach",
+      description:
+        "Initial project proposal covering problem statement, objectives, and approach",
+      viewUrl: "https://drive.google.com/file/d/1t9OO8nlSaesDt4QR38BhUrMSd90L4vn5/view?usp=sharing",
+      downloadUrl: "https://drive.google.com/uc?export=download&id=1t9OO8nlSaesDt4QR38BhUrMSd90L4vn5",
     },
     {
       title: "Progress Presentation 1",
@@ -19,7 +28,8 @@ export default function Presentations() {
       slides: 30,
       duration: "25 min",
       status: "completed",
-      description: "First progress review with literature survey findings and design specifications",
+      description:
+        "First progress review with literature survey findings and design specifications",
     },
     {
       title: "Progress Presentation 2",
@@ -27,7 +37,8 @@ export default function Presentations() {
       slides: 35,
       duration: "30 min",
       status: "upcoming",
-      description: "Second progress presentation demonstrating implementation and initial results",
+      description:
+        "Second progress presentation demonstrating implementation and initial results",
     },
     {
       title: "Final Presentation",
@@ -35,7 +46,8 @@ export default function Presentations() {
       slides: 0,
       duration: "45 min",
       status: "upcoming",
-      description: "Comprehensive final presentation with complete results and conclusions",
+      description:
+        "Comprehensive final presentation with complete results and conclusions",
     },
   ];
 
@@ -62,12 +74,24 @@ export default function Presentations() {
                     </div>
                     <div className="flex-1">
                       <div className="flex flex-wrap items-center gap-2 mb-2">
-                        <CardTitle className="text-xl">{presentation.title}</CardTitle>
+                        <CardTitle className="text-xl">
+                          {presentation.title}
+                        </CardTitle>
                         <Badge
-                          variant={presentation.status === "completed" ? "default" : "outline"}
-                          className={presentation.status === "completed" ? "bg-green-500" : ""}
+                          variant={
+                            presentation.status === "completed"
+                              ? "default"
+                              : "outline"
+                          }
+                          className={
+                            presentation.status === "completed"
+                              ? "bg-green-500"
+                              : ""
+                          }
                         >
-                          {presentation.status === "completed" ? "Available" : "Upcoming"}
+                          {presentation.status === "completed"
+                            ? "Available"
+                            : "Upcoming"}
                         </Badge>
                       </div>
                       <CardDescription className="text-base mb-2">
@@ -87,14 +111,34 @@ export default function Presentations() {
               {presentation.status === "completed" && (
                 <CardContent>
                   <div className="flex gap-2">
-                    <Button variant="default" className="gap-2">
-                      <Eye className="h-4 w-4" />
-                      View Slides
-                    </Button>
-                    <Button variant="outline" className="gap-2">
-                      <Download className="h-4 w-4" />
-                      Download
-                    </Button>
+                    {presentation.viewUrl ? (
+                      <Button
+                        variant="default"
+                        className="gap-2"
+                        onClick={() => window.open(presentation.viewUrl, '_blank')}
+                      >
+                        <Eye className="h-4 w-4" />
+                        View Slides
+                      </Button>
+                    ) : (
+                      <Button variant="default" className="gap-2" disabled>
+                        <Eye className="h-4 w-4" />
+                        View Slides
+                      </Button>
+                    )}
+                    {presentation.downloadUrl ? (
+                      <Button variant="outline" className="gap-2" asChild>
+                        <a href={presentation.downloadUrl} download>
+                          <Download className="h-4 w-4" />
+                          Download
+                        </a>
+                      </Button>
+                    ) : (
+                      <Button variant="outline" className="gap-2" disabled>
+                        <Download className="h-4 w-4" />
+                        Download
+                      </Button>
+                    )}
                   </div>
                 </CardContent>
               )}
@@ -111,23 +155,35 @@ export default function Presentations() {
             <ul className="space-y-2 text-muted-foreground">
               <li className="flex items-start gap-2">
                 <span className="text-primary mt-1">•</span>
-                <span>Prepare your slides well in advance and practice your presentation</span>
+                <span>
+                  Prepare your slides well in advance and practice your
+                  presentation
+                </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary mt-1">•</span>
-                <span>Focus on clear communication of key concepts and results</span>
+                <span>
+                  Focus on clear communication of key concepts and results
+                </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary mt-1">•</span>
-                <span>Include visual aids, diagrams, and demonstrations where appropriate</span>
+                <span>
+                  Include visual aids, diagrams, and demonstrations where
+                  appropriate
+                </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary mt-1">•</span>
-                <span>Be prepared to answer questions about methodology and results</span>
+                <span>
+                  Be prepared to answer questions about methodology and results
+                </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary mt-1">•</span>
-                <span>Upload final presentation slides within 24 hours of presenting</span>
+                <span>
+                  Upload final presentation slides within 24 hours of presenting
+                </span>
               </li>
             </ul>
           </CardContent>

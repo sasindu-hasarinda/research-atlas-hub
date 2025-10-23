@@ -1,4 +1,10 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Mail, Linkedin, Github, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -6,27 +12,31 @@ import { Button } from "@/components/ui/button";
 export default function About() {
   const teamMembers = [
     {
-      name: "Team Member 1",
+      name: "Sasindu",
       role: "Project Leader",
-      email: "member1@university.edu",
+      email: "sasindu@university.edu",
+      image: "/images/sasindu.png",
       achievements: ["Research Lead", "Full Stack Developer"],
     },
     {
-      name: "Team Member 2",
+      name: "Anuka",
       role: "Technical Lead",
-      email: "member2@university.edu",
+      email: "anuka@university.edu",
+      image: "/images/Anuka.png",
       achievements: ["Backend Specialist", "Data Analyst"],
     },
     {
-      name: "Team Member 3",
+      name: "Gayashan",
       role: "Research Analyst",
-      email: "member3@university.edu",
+      email: "gayashan@university.edu",
+      image: "/images/gayashan.png",
       achievements: ["UI/UX Designer", "Documentation Lead"],
     },
     {
-      name: "Team Member 4",
+      name: "Tharindu",
       role: "Developer",
-      email: "member4@university.edu",
+      email: "tharindu@university.edu",
+      image: "/images/Tharindu.png",
       achievements: ["Frontend Developer", "Testing Coordinator"],
     },
   ];
@@ -46,16 +56,21 @@ export default function About() {
         {/* Team Members Grid */}
         <div className="grid md:grid-cols-2 gap-6 mb-12">
           {teamMembers.map((member, index) => (
-            <Card key={index} className="hover:shadow-lg transition-all duration-300">
-              <CardHeader>
-                <div className="flex items-start gap-4">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground text-2xl font-bold shrink-0">
-                    {member.name.charAt(0)}
-                  </div>
-                  <div className="flex-1">
-                    <CardTitle className="text-xl mb-1">{member.name}</CardTitle>
-                    <CardDescription className="text-base">{member.role}</CardDescription>
-                  </div>
+            <Card
+              key={index}
+              className="hover:shadow-lg transition-all duration-300 relative"
+            >
+              <img
+                src={member.image}
+                alt={member.name}
+                className="absolute top-0 right-0 h-full w-[150px] object-cover rounded-r-lg"
+              />
+              <CardHeader className="pr-[166px]">
+                <div className="flex-1">
+                  <CardTitle className="text-xl mb-1">{member.name}</CardTitle>
+                  <CardDescription className="text-base">
+                    {member.role}
+                  </CardDescription>
                 </div>
               </CardHeader>
               <CardContent>
@@ -92,7 +107,9 @@ export default function About() {
         <Card className="bg-gradient-to-br from-primary/5 to-accent/5">
           <CardHeader>
             <CardTitle className="text-2xl">Team Achievements</CardTitle>
-            <CardDescription>Our collective accomplishments and contributions</CardDescription>
+            <CardDescription>
+              Our collective accomplishments and contributions
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -106,7 +123,9 @@ export default function About() {
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary mb-2">20+</div>
-                <p className="text-sm text-muted-foreground">Documents Created</p>
+                <p className="text-sm text-muted-foreground">
+                  Documents Created
+                </p>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary mb-2">5+</div>
@@ -117,26 +136,58 @@ export default function About() {
         </Card>
 
         {/* Supervisor Section */}
-        <Card className="mt-8">
-          <CardHeader>
-            <CardTitle className="text-2xl">Project Supervision</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="flex items-start gap-4">
-              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground text-2xl font-bold shrink-0">
-                S
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-1">Supervisor Name</h3>
-                <p className="text-muted-foreground mb-2">Senior Lecturer, Faculty of Computing</p>
-                <p className="text-sm text-muted-foreground">
-                  Expert in research methodology and project supervision with extensive experience
-                  in guiding successful research projects.
+        <div className="mt-8">
+          <h2 className="text-2xl font-bold mb-6 text-center">
+            Project Supervisors
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Card className="hover:shadow-lg transition-all duration-300 relative min-h-[200px]">
+              <img
+                src="/images/sanjeeve.png"
+                alt="Ms. Sanjeevi Chandrasiri"
+                className="absolute top-0 right-0 h-full w-[150px] object-cover rounded-r-lg"
+              />
+              <CardHeader className="pr-[166px]">
+                <div className="flex-1">
+                  <CardTitle className="text-2xl font-bold mb-1 text-primary">
+                    Ms. Sanjeevi Chandrasiri
+                  </CardTitle>
+                  <CardDescription className="text-lg text-accent-foreground">
+                    Supervisor
+                  </CardDescription>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-lg font-semibold text-foreground text-left">
+                  Senior Lecturer, Faculty of Computing | Information Technology
                 </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+              </CardContent>
+            </Card>
+            <Card className="hover:shadow-lg transition-all duration-300 relative min-h-[200px]">
+              <img
+                src="/images/Tharushi.png"
+                alt="Ms. Tharushi Rubasinghe"
+                className="absolute top-0 right-0 h-full w-[150px] object-cover rounded-r-lg"
+              />
+              <CardHeader className="pr-[166px]">
+                <div className="flex-1">
+                  <CardTitle className="text-2xl font-bold mb-1 text-primary">
+                    Ms. Tharushi Rubasinghe
+                  </CardTitle>
+                  <CardDescription className="text-lg text-accent-foreground">
+                    Co-Supervisor
+                  </CardDescription>
+                </div>
+              </CardHeader>
+              <CardContent className="pb-6">
+                <p className="text-lg font-semibold text-foreground">
+                  Assistant Lecturer, Faculty of Computing | Information
+                  Technology
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
       </div>
     </div>
   );

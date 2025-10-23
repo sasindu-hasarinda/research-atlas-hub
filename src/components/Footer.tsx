@@ -10,7 +10,7 @@ export const Footer = () => {
               <GraduationCap className="h-5 w-5 text-primary-foreground" />
             </div>
             <div>
-              <p className="font-semibold">Research Project Portal</p>
+              <p className="font-semibold">Intelibridge Portal</p>
               <p className="text-sm text-muted-foreground">Documentation & Resources</p>
             </div>
           </div>
