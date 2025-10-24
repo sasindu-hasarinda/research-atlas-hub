@@ -19,8 +19,10 @@ export default function Presentations() {
       status: "completed",
       description:
         "Initial project proposal covering problem statement, objectives, and approach",
-      viewUrl: "https://drive.google.com/file/d/1t9OO8nlSaesDt4QR38BhUrMSd90L4vn5/view?usp=sharing",
-      downloadUrl: "https://drive.google.com/uc?export=download&id=1t9OO8nlSaesDt4QR38BhUrMSd90L4vn5",
+      viewUrl:
+        "https://docs.google.com/presentation/d/1kGewZXxLDNnoZnSpPAH1j9p5KpbbXF0U/edit?usp=sharing&ouid=108320701124573512396&rtpof=true&sd=true",
+      downloadUrl:
+        "https://drive.google.com/uc?export=download&id=1kGewZXxLDNnoZnSpPAH1j9p5KpbbXF0U",
     },
     {
       title: "Progress Presentation 1",
@@ -30,22 +32,30 @@ export default function Presentations() {
       status: "completed",
       description:
         "First progress review with literature survey findings and design specifications",
+      viewUrl:
+        "https://docs.google.com/presentation/d/13cV818FqNuz0sdvb3zbQzHENsXDgnqlh/edit?usp=sharing&ouid=108320701124573512396&rtpof=true&sd=true",
+      downloadUrl:
+        "https://drive.google.com/uc?export=download&id=13cV818FqNuz0sdvb3zbQzHENsXDgnqlh",
     },
     {
       title: "Progress Presentation 2",
       date: "April 18, 2025",
       slides: 35,
       duration: "30 min",
-      status: "upcoming",
+      status: "completed",
       description:
         "Second progress presentation demonstrating implementation and initial results",
+      viewUrl:
+        "https://docs.google.com/presentation/d/1c0ZeGDAUck0O4bWc5uitPv8u9IvZ4l3F/edit?usp=sharing&ouid=108320701124573512396&rtpof=true&sd=true",
+      downloadUrl:
+        "https://drive.google.com/uc?export=download&id=1c0ZeGDAUck0O4bWc5uitPv8u9IvZ4l3F",
     },
     {
       title: "Final Presentation",
       date: "May 22, 2025",
       slides: 0,
       duration: "45 min",
-      status: "upcoming",
+      status: "completed",
       description:
         "Comprehensive final presentation with complete results and conclusions",
     },
@@ -115,7 +125,9 @@ export default function Presentations() {
                       <Button
                         variant="default"
                         className="gap-2"
-                        onClick={() => window.open(presentation.viewUrl, '_blank')}
+                        onClick={() =>
+                          window.open(presentation.viewUrl, "_blank")
+                        }
                       >
                         <Eye className="h-4 w-4" />
                         View Slides

@@ -12,32 +12,36 @@ import { Button } from "@/components/ui/button";
 export default function About() {
   const teamMembers = [
     {
-      name: "Sasindu",
+      name: "M.G.S.H Karunathilka",
       role: "Project Leader",
-      email: "sasindu@university.edu",
+      email: "it20009236@my.sliit.lk",
+      itNumber: "IT20009236",
       image: "/images/sasindu.png",
-      achievements: ["Research Lead", "Full Stack Developer"],
+      achievements: ["Skill Gap Analysis"],
     },
     {
-      name: "Anuka",
-      role: "Technical Lead",
-      email: "anuka@university.edu",
+      name: "Ekanayake T.E.M.A.P",
+      role: "",
+      email: "IT21025358@my.sliit.lk",
+      itNumber: "IT21025358",
       image: "/images/Anuka.png",
-      achievements: ["Backend Specialist", "Data Analyst"],
+      achievements: ["Personalized Learning Pathways"],
     },
     {
-      name: "Gayashan",
-      role: "Research Analyst",
-      email: "gayashan@university.edu",
+      name: "Dias N.T.G.P",
+      role: "",
+      email: "IT21350450@my.sliit.lk",
+      itNumber: "IT21350450",
       image: "/images/gayashan.png",
-      achievements: ["UI/UX Designer", "Documentation Lead"],
+      achievements: ["Career Insights Dashboard"],
     },
     {
-      name: "Tharindu",
-      role: "Developer",
-      email: "tharindu@university.edu",
+      name: "Madushan J. M. T",
+      role: "",
+      email: "IT21807008@my.sliit.lk",
+      itNumber: "IT21807008",
       image: "/images/Tharindu.png",
-      achievements: ["Frontend Developer", "Testing Coordinator"],
+      achievements: ["AI-Powered Mock Interviews"],
     },
   ];
 
@@ -68,6 +72,11 @@ export default function About() {
               <CardHeader className="pr-[166px]">
                 <div className="flex-1">
                   <CardTitle className="text-xl mb-1">{member.name}</CardTitle>
+                  {member.itNumber && (
+                    <p className="text-sm text-muted-foreground mb-1 font-bold">
+                      {member.itNumber}
+                    </p>
+                  )}
                   <CardDescription className="text-base">
                     {member.role}
                   </CardDescription>
@@ -145,7 +154,7 @@ export default function About() {
               <img
                 src="/images/sanjeeve.png"
                 alt="Ms. Sanjeevi Chandrasiri"
-                className="absolute top-0 right-0 h-full w-[150px] object-cover rounded-r-lg"
+                className="absolute top-0 right-0 h-[150px] w-[150px] object-cover rounded-lg border"
               />
               <CardHeader className="pr-[166px]">
                 <div className="flex-1">
@@ -157,9 +166,18 @@ export default function About() {
                   </CardDescription>
                 </div>
               </CardHeader>
-              <CardContent>
+              <CardContent className="pr-[200px]">
                 <p className="text-lg font-semibold text-foreground text-left">
                   Senior Lecturer, Faculty of Computing | Information Technology
+                </p>
+                <p className="text-sm text-muted-foreground mt-2">
+                  Ms. Sanjeevi Chandrasiri is a Senior Lecturer and Year 1
+                  Course Leader at SLIIT with extensive experience in Artificial
+                  Intelligence, Medical Image Processing, and Natural Language
+                  Processing. Her award-winning work, including the National
+                  Best Quality Software Award and e-Swabhimani Award, highlights
+                  her significant contributions to innovative AI-based
+                  educational and healthcare solutions.
                 </p>
               </CardContent>
             </Card>
@@ -167,7 +185,7 @@ export default function About() {
               <img
                 src="/images/Tharushi.png"
                 alt="Ms. Tharushi Rubasinghe"
-                className="absolute top-0 right-0 h-full w-[150px] object-cover rounded-r-lg"
+                className="absolute top-0 right-0 h-[150px] w-[150px] object-cover rounded-lg border"
               />
               <CardHeader className="pr-[166px]">
                 <div className="flex-1">
@@ -179,10 +197,17 @@ export default function About() {
                   </CardDescription>
                 </div>
               </CardHeader>
-              <CardContent className="pb-6">
+              <CardContent className="pb-6 pr-[166px]">
                 <p className="text-lg font-semibold text-foreground">
                   Assistant Lecturer, Faculty of Computing | Information
                   Technology
+                </p>
+                <p className="text-sm text-muted-foreground mt-2">
+                  Ms. Tharushi Rubasinghe is an Assistant Lecturer at SLIIT with
+                  strong expertise in E-learning technologies and AI-driven
+                  education systems. Her research focuses on applying machine
+                  learning to enhance student engagement and mental well-being
+                  in higher education.
                 </p>
               </CardContent>
             </Card>
