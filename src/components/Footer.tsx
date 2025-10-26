@@ -11,7 +11,9 @@ export const Footer = () => {
             </div>
             <div>
               <p className="font-semibold">Intelibridge Portal</p>
-              <p className="text-sm text-muted-foreground">Documentation & Resources</p>
+              <p className="text-sm text-foreground">
+                Documentation & Resources
+              </p>
             </div>
           </div>
           <p className="text-sm text-muted-foreground">

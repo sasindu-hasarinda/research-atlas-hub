@@ -36,7 +36,7 @@ export default function Domain() {
           <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             Domain & Research
           </h1>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-xl text-foreground">
             Comprehensive overview of research domain, objectives, and
             methodology
           </p>
@@ -60,7 +60,7 @@ export default function Domain() {
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-foreground leading-relaxed">
                   In Sri Lanka, approximately 170,000 candidates qualify for
                   higher education each year, yet many choose their courses
                   based on biased recommendations from family and friends. This
@@ -73,7 +73,7 @@ export default function Domain() {
                   selection but also comprehensive career advisory services,
                   scholarship opportunities, and financial aid guidance.
                 </p>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-foreground leading-relaxed">
                   To tackle these challenges, we propose developing an AI-driven
                   higher education and career advisory platform tailored for Sri
                   Lankan students. This platform will utilize advanced
@@ -109,7 +109,7 @@ export default function Domain() {
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-foreground leading-relaxed">
                   Project Intelibridge introduces Skill Bridge AI, an integrated
                   AI-powered web platform designed to enhance career readiness
                   for IT graduates in Sri Lanka by bridging skill gaps and
@@ -136,68 +136,6 @@ export default function Domain() {
                   improving graduate employability and industry alignment in Sri
                   Lanka's rapidly growing $5 billion IT sector.
                 </p>
-                <div>
-                  <h4 className="font-semibold mb-2">
-                    References ( – Overall Project)
-                  </h4>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>
-                      [1] J. Devlin, M.-W. Chang, K. Lee, and K. Toutanova,
-                      "BERT: Pre-training of Deep Bidirectional Transformers for
-                      Language Understanding," in Proc. NAACL-HLT, Minneapolis,
-                      MN, USA, 2019, pp. 4171–4186. Used for skill extraction
-                      from CVs.
-                    </li>
-                    <li>
-                      [2] A. Vaswani et al., "Attention is All You Need," in
-                      Proc. 31st Int. Conf. Neural Inf. Process. Syst.
-                      (NeurIPS), Long Beach, CA, USA, 2017, pp. 6000–6010.
-                      Foundation of NLP and recommendation models.
-                    </li>
-                    <li>
-                      [3] J. Redmon and A. Farhadi, "YOLOv3: An Incremental
-                      Improvement," arXiv preprint arXiv:1804.02767, 2018.
-                      Real-time facial and posture analysis in mock interviews.
-                    </li>
-                    <li>
-                      [4] M. Honnibal and I. Montani, "spaCy:
-                      Industrial-strength Natural Language Processing in
-                      Python," Explosion, 2020. [Online]. Available:
-                      https://spacy.io Text processing, NER, and sentiment
-                      analysis.
-                    </li>
-                    <li>
-                      [5] T. Mikolov, I. Sutskever, K. Chen, G. S. Corrado, and
-                      J. Dean, "Distributed Representations of Words and Phrases
-                      and their Compositionality," in Adv. Neural Inf. Process.
-                      Syst. (NeurIPS), Lake Tahoe, NV, USA, 2013, pp. 3111–3119.
-                      Skill similarity and gap matching.
-                    </li>
-                    <li>
-                      [6] OpenAI, "Whisper: Robust Speech Recognition via
-                      Large-Scale Weak Supervision," GitHub Repository, 2022.
-                      [Online]. Available: https://github.com/openai/whisper
-                      Speech-to-text for interview evaluation.
-                    </li>
-                    <li>
-                      [7] Google Cloud, "Vertex AI & AutoML Documentation,"
-                      Google Cloud Platform, 2025. [Online]. Available:
-                      https://cloud.google.com/vertex-ai Model training,
-                      deployment, and scalability.
-                    </li>
-                    <li>
-                      [8] Sri Lanka Export Development Board, "IT-BPM Industry
-                      Performance Report 2024," EDB Sri Lanka, Colombo, Sri
-                      Lanka, 2024. Market data for job and salary forecasting.
-                    </li>
-                    <li>
-                      [9] IEEE Xplore Digital Library, Search Term: "AI in
-                      Career Guidance and Employability," Accessed: Oct. 2025.
-                      [Online]. Available: https://ieeexplore.ieee.org
-                      Literature review and benchmarking.
-                    </li>
-                  </ul>
-                </div>
               </div>
             </CardContent>
           </Card>
@@ -241,46 +179,6 @@ export default function Domain() {
                   and predictive modeling to deliver actionable, culturally
                   relevant, and data-driven career readiness insights.
                 </p>
-                <div>
-                  <h4 className="font-semibold mb-2">
-                    References Supporting the Research Gap
-                  </h4>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>
-                      [1] Sri Lanka Export Development Board, "IT-BPM Industry
-                      Performance Report 2024," EDB Sri Lanka, Colombo, Sri
-                      Lanka, 2024. Highlights 25% graduate underemployment due
-                      to skill mismatch.
-                    </li>
-                    <li>
-                      [2] World Bank, "Sri Lanka Development Update 2024: Jobs
-                      and Skills for the Future," World Bank Group, Washington,
-                      DC, USA, 2024. Identifies lack of industry-aligned
-                      training and real-time labor market data.
-                    </li>
-                    <li>
-                      [3] N. Ratnayake and S. Jayasinghe, "Graduate
-                      Employability in Sri Lanka's IT Sector: Challenges and
-                      Opportunities," Sri Lankan Journal of Human Resource
-                      Management, vol. 12, no. 1, pp. 45–60, 2023. Reports 68%
-                      of IT graduates lack soft skills and emerging tech
-                      proficiency.
-                    </li>
-                    <li>
-                      [4] A. Perera, "Digital Skills Gap in South Asia: A
-                      Comparative Study," in Proc. IEEE Int. Conf. Adv. Learn.
-                      Technol. (ICALT), 2022, pp. 112–116. Notes absence of
-                      AI-driven personalized learning systems in regional
-                      contexts.
-                    </li>
-                    <li>
-                      [5] M. Wijesinghe, "Career Guidance Platforms in Sri
-                      Lanka: A Review," Journal of Education and Vocational
-                      Research, vol. 10, no. 2, 2021. Concludes existing tools
-                      are generic, non-adaptive, and lack predictive analytics.
-                    </li>
-                  </ul>
-                </div>
               </div>
             </CardContent>
           </Card>
@@ -347,46 +245,6 @@ export default function Domain() {
                   market trends to significantly improve employability and
                   career readiness of Sri Lankan IT graduates?"
                 </blockquote>
-                <div>
-                  <h4 className="font-semibold mb-2">
-                    References Supporting the Research Problem
-                  </h4>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>
-                      [1] Sri Lanka Export Development Board, "IT-BPM Industry
-                      Performance Report 2024," EDB Sri Lanka, Colombo, Sri
-                      Lanka, 2024. → Reports 68% skill gap in cloud, AI, and
-                      soft skills among fresh graduates.
-                    </li>
-                    <li>
-                      [2] World Bank, "Sri Lanka Development Update 2024: Jobs
-                      and Skills for the Future," World Bank Group, Washington,
-                      DC, USA, 2024. → Highlights 25% youth underemployment in
-                      tech due to outdated curricula.
-                    </li>
-                    <li>
-                      [3] N. Ratnayake and S. Jayasinghe, "Graduate
-                      Employability in Sri Lanka's IT Sector: Challenges and
-                      Opportunities," Sri Lankan Journal of Human Resource
-                      Management, vol. 12, no. 1, pp. 45–60, 2023. → Finds only
-                      32% of graduates pass technical interviews on first
-                      attempt.
-                    </li>
-                    <li>
-                      [4] A. Perera, "Digital Skills Gap in South Asia: A
-                      Comparative Study," in Proc. IEEE Int. Conf. Adv. Learn.
-                      Technol. (ICALT), 2022, pp. 112–116. → Notes absence of
-                      real-time, predictive career tools in developing
-                      economies.
-                    </li>
-                    <li>
-                      [5] M. Wijesinghe, "Career Guidance Platforms in Sri
-                      Lanka: A Review," Journal of Education and Vocational
-                      Research, vol. 10, no. 2, 2021. → Concludes existing
-                      systems are non-personalized and lack AI integration.
-                    </li>
-                  </ul>
-                </div>
               </div>
             </CardContent>
           </Card>
@@ -456,53 +314,6 @@ export default function Domain() {
                     against baseline career tools.
                   </li>
                 </ul>
-                <div>
-                  <h4 className="font-semibold mb-2">
-                    References Supporting Research Objectives
-                  </h4>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>
-                      [1] J. Devlin, M.-W. Chang, K. Lee, and K. Toutanova,
-                      "BERT: Pre-training of Deep Bidirectional Transformers for
-                      Language Understanding," in Proc. NAACL-HLT, Minneapolis,
-                      MN, USA, 2019, pp. 4171–4186. → Supports Objective 1:
-                      Skill extraction via BERT + SpaCy.
-                    </li>
-                    <li>
-                      [2] J. Redmon and A. Farhadi, "YOLOv3: An Incremental
-                      Improvement," arXiv preprint arXiv:1804.02767, 2018. →
-                      Supports Objective 2: Real-time visual analysis in mock
-                      interviews.
-                    </li>
-                    <li>
-                      [3] M. Honnibal and I. Montani, "spaCy:
-                      Industrial-strength Natural Language Processing in
-                      Python," Explosion, 2020. [Online]. Available:
-                      https://spacy.io → Supports Objectives 1 & 2: NLP pipeline
-                      for CV and speech analysis.
-                    </li>
-                    <li>
-                      [4] OpenAI, "Whisper: Robust Speech Recognition via
-                      Large-Scale Weak Supervision," GitHub Repository, 2022.
-                      [Online]. Available: https://github.com/openai/whisper →
-                      Supports Objective 2: Speech-to-text for interview
-                      evaluation.
-                    </li>
-                    <li>
-                      [5] T. Chen and C. Guestrin, "XGBoost: A Scalable Tree
-                      Boosting System," in Proc. 22nd ACM SIGKDD Int. Conf.
-                      Knowl. Discov. Data Min., San Francisco, CA, USA, 2016,
-                      pp. 785–794. → Supports Objectives 3 & 4: Predictive
-                      modeling for learning paths and salary forecasting.
-                    </li>
-                    <li>
-                      [6] Sri Lanka Export Development Board, "IT-BPM Industry
-                      Performance Report 2024," EDB Sri Lanka, Colombo, Sri
-                      Lanka, 2024. → Supports Objective 4: Local market data for
-                      trend prediction.
-                    </li>
-                  </ul>
-                </div>
               </div>
             </CardContent>
           </Card>
@@ -649,7 +460,7 @@ export default function Domain() {
                   Data was collected from multiple sources to ensure robustness
                   and real-world relevance.
                 </p>
-                <table className="w-full border-collapse border border-gray-300 text-sm text-primary">
+                <table className="w-full border-collapse border border-gray-300 text-sm text-foreground">
                   <thead>
                     <tr className="bg-gray-100">
                       <th className="border border-gray-300 px-4 py-2">
@@ -830,7 +641,7 @@ export default function Domain() {
                   The core of the research involved developing and training
                   several AI models.
                 </p>
-                <table className="w-full border-collapse border border-gray-300 text-sm text-primary">
+                <table className="w-full border-collapse border border-gray-300 text-sm text-foreground">
                   <thead>
                     <tr className="bg-gray-100">
                       <th className="border border-gray-300 px-4 py-2">
@@ -997,7 +808,7 @@ export default function Domain() {
                 <p className="text-muted-foreground leading-relaxed">
                   A rigorous multi-faceted testing strategy was employed.
                 </p>
-                <table className="w-full border-collapse border border-gray-300 text-sm text-primary">
+                <table className="w-full border-collapse border border-gray-300 text-sm text-foreground">
                   <thead>
                     <tr className="bg-gray-100">
                       <th className="border border-gray-300 px-4 py-2">
@@ -1062,6 +873,35 @@ export default function Domain() {
                   backend, AI/ML, cloud infrastructure, and data management,
                   enabling rapid prototyping, deployment, and maintenance.
                 </p>
+
+                <h4 className="font-semibold mb-2">Technology Stack Images</h4>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-6">
+                  {[
+                    { name: "Google Cloud", file: "Google Cloud.png" },
+                    { name: "Google", file: "Google.png" },
+                    { name: "Tailwind CSS", file: "Tailwind CSS.png" },
+                    { name: "FastAPI", file: "FastAPI.png" },
+                    { name: "Git", file: "Git.png" },
+                    {
+                      name: "Visual Studio Code (VS Code)",
+                      file: "Visual Studio Code (VS Code).png",
+                    },
+                    { name: "Jupyter", file: "Jupyter.png" },
+                    { name: "Docker", file: "Docker.png" },
+                    { name: "OpenCV", file: "OpenCV.png" },
+                    { name: "Firebase", file: "Firebase.png" },
+                    { name: "Python", file: "Python.png" },
+                  ].map((img, idx) => (
+                    <div key={idx} className="text-center">
+                      <img
+                        src={`/images/${img.file}`}
+                        alt={img.name}
+                        className="w-16 h-16 mx-auto mb-2 object-contain"
+                      />
+                      <p className="text-sm font-medium">{img.name}</p>
+                    </div>
+                  ))}
+                </div>
 
                 <h4 className="font-semibold mb-2">
                   4.1 Frontend Technologies
@@ -1588,40 +1428,6 @@ export default function Domain() {
                     Firebase
                   </em>
                 </p>
-
-                <div>
-                  <h4 className="font-semibold mb-2">
-                    References (Tools & Technologies – IEEE Format)
-                  </h4>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>
-                      [1] M. Honnibal and I. Montani, "spaCy:
-                      Industrial-strength Natural Language Processing in
-                      Python," Explosion, 2020. [Online]. Available:
-                      https://spacy.io
-                    </li>
-                    <li>
-                      [2] Ultralytics, "YOLOv8: State-of-the-Art Object
-                      Detection," GitHub Repository, 2023. [Online]. Available:
-                      https://github.com/ultralytics/ultralytics
-                    </li>
-                    <li>
-                      [3] OpenAI, "Whisper: Robust Speech Recognition via
-                      Large-Scale Weak Supervision," GitHub, 2022. [Online].
-                      Available: https://github.com/openai/whisper
-                    </li>
-                    <li>
-                      [4] Google Cloud, "Vertex AI Documentation," Google Cloud
-                      Platform, 2025. [Online]. Available:
-                      https://cloud.google.com/vertex-ai
-                    </li>
-                    <li>
-                      [5] T. Chen and C. Guestrin, "XGBoost: A Scalable Tree
-                      Boosting System," in *Proc. 22nd ACM SIGKDD*, San
-                      Francisco, CA, USA, 2016, pp. 785–794.
-                    </li>
-                  </ul>
-                </div>
               </div>
             </CardContent>
           </Card>
