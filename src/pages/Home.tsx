@@ -51,13 +51,18 @@ export default function Home() {
         <div className="relative container">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-foreground animate-fade-in-up drop-shadow-lg">
-              Intelibridge: AI-Driven Application to Bridge IT Academic Industry Skills Gaps
+              Intelibridge: AI-Driven Application to Bridge IT Academic Industry
+              Skills Gaps
             </h1>
+            <p className="text-lg md:text-xl text-primary font-semibold mb-4 animate-fade-in-up animation-delay-200">
+              RP25-043
+            </p>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed animate-fade-in-up animation-delay-300">
               A comprehensive research project exploring the disconnect between
-              industry requirements and academic preparation through AI-powered solutions.
-              Discover insights, methodologies, and innovative approaches to align
-              undergraduate education with real-world IT industry needs.
+              industry requirements and academic preparation through AI-powered
+              solutions. Discover insights, methodologies, and innovative
+              approaches to align undergraduate education with real-world IT
+              industry needs.
             </p>
             <div className="flex flex-wrap gap-4 animate-fade-in-up animation-delay-600">
               <Button asChild size="lg" className="shadow-lg">
