@@ -50,13 +50,13 @@ export default function Home() {
         ></div>
         <div className="relative container">
           <div className="max-w-3xl">
+            <p className="text-xl md:text-2xl text-primary font-bold mb-4 animate-fade-in-up">
+              RP25-043
+            </p>
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-foreground animate-fade-in-up drop-shadow-lg">
               Intelibridge: AI-Driven Application to Bridge IT Academic Industry
               Skills Gaps
             </h1>
-            <p className="text-lg md:text-xl text-primary font-semibold mb-4 animate-fade-in-up animation-delay-200">
-              RP25-043
-            </p>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed animate-fade-in-up animation-delay-300">
               A comprehensive research project exploring the disconnect between
               industry requirements and academic preparation through AI-powered
