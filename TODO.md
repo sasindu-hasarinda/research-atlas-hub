@@ -1,8 +1,7 @@
-# TODO: Update Milestones Page
+# Contact Page Update TODO
 
-- [x] Update the subtitle to "Key events that demonstrate the progress and completion of the project."
-- [x] Replace the milestones array with the new 8 milestones data (February to November 2024)
-- [x] Add marks and percentage fields to each milestone object
-- [x] Update the CardDescription to display "Marks Allocated: {marks} {percentage}"
-- [x] Set all milestone statuses to "pending"
-- [x] Update the summary card counts: 0 Completed, 0 In Progress, 8 Pending
+- [x] Add logo and "Visit Website!" button at the top of the page
+- [x] Include the slogan "Transform Your Carreer Journey with Cutting-Edge AI Solutions!"
+- [x] Simplify the contact form: Remove Subject field, change Message label to "Message or Query"
+- [x] Update contact details section to display only the email inteliBridge@gmail.com
+- [x] Add footer message: "Hope this project helped you in some manner. Thank you! - Team InteliBridge-RP25-043"

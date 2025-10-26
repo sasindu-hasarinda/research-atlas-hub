@@ -524,257 +524,517 @@ export default function Domain() {
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                <h4 className="font-semibold mb-2">Research Methodology – Project IntelliBridge: Skill Bridge AI</h4>
+                <h4 className="font-semibold mb-2">
+                  Research Methodology for an AI-Driven Platform to Bridge the
+                  IT Academic-Industry Skills Gap
+                </h4>
                 <p className="text-muted-foreground leading-relaxed">
                   <em>(IEEE-Style, Ready for Research Paper – Section 3)</em>
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  The research adopts a <strong>design science research methodology (DSRM)</strong> framework to develop, implement, and evaluate <em>Skill Bridge AI</em>, an AI-integrated career readiness platform. The study follows a <strong>six-phase iterative process</strong>: problem identification, objective definition, design and development, demonstration, evaluation, and communication, ensuring both <strong>artifact rigor</strong> and <strong>practical relevance</strong> in the Sri Lankan IT context.
+                  This research adopts a <strong>pragmatist philosophy</strong>,
+                  focusing on practical, real-world problem-solving. The
+                  approach is <strong>mixed-methods</strong>, combining:
                 </p>
-
-                <h4 className="font-semibold mb-2">3.1 System Architecture</h4>
+                <ul className="list-disc list-inside text-muted-foreground leading-relaxed space-y-1">
+                  <li>
+                    <strong>Quantitative Data:</strong> For model training,
+                    performance metrics (accuracy, RMSE, F1-score), and system
+                    performance testing.
+                  </li>
+                  <li>
+                    <strong>Qualitative Data:</strong> For user experience
+                    testing, feedback collection, and validating the practical
+                    utility of the platform through pilot studies with IT
+                    students and graduates.
+                  </li>
+                </ul>
                 <p className="text-muted-foreground leading-relaxed">
-                  The platform is built using a <strong>microservices architecture</strong> deployed on <strong>Google Cloud Platform (GCP)</strong>:
+                  The development follows an{" "}
+                  <strong>Agile and Iterative Development Model</strong>,
+                  allowing for continuous refinement of each module based on
+                  testing and user feedback.
+                </p>
+
+                <h4 className="font-semibold mb-2">
+                  3.1 System Architecture and Overall Design
+                </h4>
+                <p className="text-muted-foreground leading-relaxed">
+                  The platform is designed as an{" "}
+                  <strong>
+                    integrated web application with a microservices-inspired
+                    architecture
+                  </strong>
+                  , ensuring modularity and scalability. The high-level
+                  architecture is as follows:
                 </p>
                 <ul className="list-disc list-inside text-muted-foreground leading-relaxed space-y-1">
-                  <li><strong>Frontend</strong>: Next.js (React-based) for responsive, interactive dashboards.</li>
-                  <li><strong>Backend</strong>: FastAPI (Python) for high-performance RESTful APIs.</li>
-                  <li><strong>Database</strong>: Firebase Firestore for real-time user data and authentication.</li>
-                  <li><strong>AI Pipeline</strong>: Vertex AI for model training, inference, and auto-scaling.</li>
-                  <li><strong>Data Flow</strong>: CV upload → preprocessing → AI models → feedback → visualization.</li>
+                  <li>
+                    <strong>Frontend (User Interface):</strong> A unified web
+                    application built with <strong>Next.js</strong> and{" "}
+                    <strong>Tailwind CSS</strong>, providing a responsive and
+                    interactive user experience. It includes components for user
+                    registration, data input (CV/JD upload), dashboards, and the
+                    mock interview interface.
+                  </li>
+                  <li>
+                    <strong>Backend & APIs:</strong> A <strong>FastAPI</strong>{" "}
+                    and <strong>Flask</strong> backend handles business logic,
+                    user authentication, and serves as a middleware between the
+                    frontend and various AI models.
+                  </li>
+                  <li>
+                    <strong>AI/ML Microservices:</strong>
+                    <ul className="list-disc list-inside ml-4 space-y-1">
+                      <li>
+                        <strong>Skill Gap Analyzer:</strong> Utilizes
+                        custom-trained <strong>spaCy</strong> NER models for CV
+                        and JD parsing and{" "}
+                        <strong>Sentence Transformers</strong> for semantic
+                        skill matching.
+                      </li>
+                      <li>
+                        <strong>Quiz Generator & Evaluator:</strong> Leverages{" "}
+                        <strong>LLMs (ChatGPT/Gemini API)</strong> with prompt
+                        engineering to generate and evaluate personalized
+                        quizzes.
+                      </li>
+                      <li>
+                        <strong>Course Recommender:</strong> An{" "}
+                        <strong>XGBoost</strong> regression model trained on
+                        web-scraped course data to recommend personalized
+                        learning resources.
+                      </li>
+                      <li>
+                        <strong>Career Insights Engine:</strong> Employs
+                        time-series forecasting models (
+                        <strong>ARIMA, Prophet, LSTM</strong>) on job market
+                        data and a <strong>Random Forest</strong> model for
+                        salary prediction.
+                      </li>
+                      <li>
+                        <strong>Mock Interview Analyzer:</strong> Integrates a{" "}
+                        <strong>CNN (Convolutional Neural Network)</strong> for
+                        real-time facial emotion recognition and an{" "}
+                        <strong>
+                          NLP pipeline (OpenAI Whisper, Language-tool-python,
+                          Sentence Transformers)
+                        </strong>{" "}
+                        for speech-to-text and answer evaluation.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Database & Cloud Infrastructure:</strong>{" "}
+                    <strong>Google Cloud Platform (GCP)</strong> is used for
+                    hosting and scalability. <strong>Firebase Firestore</strong>{" "}
+                    manages user data, CVs, JDs, and analysis results.{" "}
+                    <strong>Google Cloud Storage</strong> stores trained models
+                    and static assets.
+                  </li>
+                  <li>
+                    <strong>Data Collection Engine:</strong> A web scraping
+                    module using{" "}
+                    <strong>Selenium, Scrapy, and BeautifulSoup</strong>{" "}
+                    continuously gathers job market data from platforms like
+                    LinkedIn, Glassdoor, and TopJobs.lk, and course data from
+                    platforms like Coursera.
+                  </li>
                 </ul>
 
-                <h4 className="font-semibold mb-2">3.2 Data Collection and Preprocessing</h4>
+                <h4 className="font-semibold mb-2">
+                  3.2 Data Collection Strategy
+                </h4>
+                <p className="text-muted-foreground leading-relaxed">
+                  Data was collected from multiple sources to ensure robustness
+                  and real-world relevance.
+                </p>
                 <table className="w-full border-collapse border border-gray-300 text-sm text-primary">
                   <thead>
                     <tr className="bg-gray-100">
-                      <th className="border border-gray-300 px-4 py-2">Source</th>
-                      <th className="border border-gray-300 px-4 py-2">Type</th>
-                      <th className="border border-gray-300 px-4 py-2">Method</th>
+                      <th className="border border-gray-300 px-4 py-2">
+                        Data Type
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2">
+                        Source
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2">
+                        Method
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2">
+                        Purpose
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2">Student CVs</td>
-                      <td className="border border-gray-300 px-4 py-2">Unstructured text (PDF/DOCX)</td>
-                      <td className="border border-gray-300 px-4 py-2">Web scraping + manual collection (n=500)</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        CV Data
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        IT Students/Graduates
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Google Forms & Industry Partnerships (with ethical
+                        consent)
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Train and validate the custom spaCy CV parser and for
+                        skill gap analysis.
+                      </td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2">Job Postings</td>
-                      <td className="border border-gray-300 px-4 py-2">Structured + unstructured</td>
-                      <td className="border border-gray-300 px-4 py-2">Web scraping (LinkedIn, TopJobs.lk, Glassdoor)</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Job Descriptions
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Online Job Portals (TopJobs, LinkedIn)
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Web Scraping (Selenium, BeautifulSoup)
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Understand industry skill demands and for JD analysis
+                        and market forecasting.
+                      </td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2">Interview Videos</td>
-                      <td className="border border-gray-300 px-4 py-2">Multimodal (video/audio)</td>
-                      <td className="border border-gray-300 px-4 py-2">Synthetic + real user recordings</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Course Data
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Online Learning Platforms (Coursera)
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Web Scraping
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Create the dataset for training the XGBoost course
+                        recommendation model.
+                      </td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2">Industry Benchmarks</td>
-                      <td className="border border-gray-300 px-4 py-2">Skill matrices</td>
-                      <td className="border border-gray-300 px-4 py-2">EDB Sri Lanka, NASSCOM, Gartner Reports</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Facial Expression Data
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Public Dataset (FER-2013)
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Pre-existing Dataset
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Train the CNN for emotion recognition in the mock
+                        interview module.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Job Market Trends
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        LinkedIn, Glassdoor, Govt. Reports
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Web Scraping & Public Datasets
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Train time-series models (ARIMA, Prophet, LSTM) for the
+                        career insights dashboard.
+                      </td>
                     </tr>
                   </tbody>
                 </table>
-                <p className="text-muted-foreground leading-relaxed mt-2">
-                  <strong>Preprocessing</strong>:
+
+                <h4 className="font-semibold mb-2">
+                  3.3 Data Preprocessing and Feature Engineering
+                </h4>
+                <p className="text-muted-foreground leading-relaxed">
+                  A standardized data preprocessing pipeline was implemented
+                  across all modules:
                 </p>
                 <ul className="list-disc list-inside text-muted-foreground leading-relaxed space-y-1">
-                  <li>CVs: PDF → text using <code>PyMuPDF</code>; normalization, stop-word removal.</li>
-                  <li>Job data: HTML parsing with <code>BeautifulSoup</code>, JSON standardization.</li>
-                  <li>Video: Frame extraction (30 fps), audio isolation using <code>ffmpeg</code>.</li>
+                  <li>
+                    <strong>Text Data (CVs, JDs):</strong>
+                    <ul className="list-disc list-inside ml-4 space-y-1">
+                      <li>
+                        <strong>Cleaning:</strong> Removal of null values,
+                        duplicates, and irrelevant characters.
+                      </li>
+                      <li>
+                        <strong>Normalization:</strong> Lowercasing,
+                        tokenization, lemmatization, and stop-word removal using{" "}
+                        <strong>NLTK/spaCy</strong>.
+                      </li>
+                      <li>
+                        <strong>Skill Extraction:</strong> Custom-trained{" "}
+                        <strong>spaCy</strong> models to identify and tag
+                        technical skills.
+                      </li>
+                      <li>
+                        <strong>Feature Engineering:</strong> Skills were
+                        converted into vector embeddings using{" "}
+                        <strong>Sentence Transformers</strong> for semantic
+                        similarity calculation.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Course Data:</strong>
+                    <ul className="list-disc list-inside ml-4 space-y-1">
+                      <li>
+                        <strong>Structuring:</strong> Attributes like title,
+                        description, duration, level, and URL were extracted.
+                      </li>
+                      <li>
+                        <strong>Numerical Encoding:</strong> Categorical
+                        variables (e.g., course level) were converted to
+                        numerical scales.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Image Data (Facial Expressions):</strong>
+                    <ul className="list-disc list-inside ml-4 space-y-1">
+                      <li>
+                        <strong>Preprocessing:</strong> Images from FER-2013
+                        were resized to 48x48 pixels, converted to grayscale,
+                        and pixel values were normalized to [0, 1].
+                      </li>
+                      <li>
+                        <strong>Augmentation:</strong> Techniques like rotation,
+                        shearing, and zooming were applied to improve model
+                        generalization.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Time-Series Data (Job Market):</strong>
+                    <ul className="list-disc list-inside ml-4 space-y-1">
+                      <li>
+                        <strong>Cleaning & Imputation:</strong> Handling missing
+                        data points in job posting trends.
+                      </li>
+                      <li>
+                        <strong>Feature Creation:</strong> Creating lag features
+                        and rolling averages for forecasting models.
+                      </li>
+                    </ul>
+                  </li>
                 </ul>
 
-                <h4 className="font-semibold mb-2">3.3 AI Model Development</h4>
-
-                <h5 className="font-medium mb-2">Function 1: Skill Gap Analysis</h5>
+                <h4 className="font-semibold mb-2">
+                  3.4 Model Development and Training
+                </h4>
+                <p className="text-muted-foreground leading-relaxed">
+                  The core of the research involved developing and training
+                  several AI models.
+                </p>
                 <table className="w-full border-collapse border border-gray-300 text-sm text-primary">
                   <thead>
                     <tr className="bg-gray-100">
-                      <th className="border border-gray-300 px-4 py-2">Model</th>
-                      <th className="border border-gray-300 px-4 py-2">Algorithm</th>
-                      <th className="border border-gray-300 px-4 py-2">Framework</th>
-                      <th className="border border-gray-300 px-4 py-2">Accuracy</th>
+                      <th className="border border-gray-300 px-4 py-2">
+                        Module
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2">
+                        Model/Algorithm Selected
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2">
+                        Justification & Training Process
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2">Skill Extraction</td>
-                      <td className="border border-gray-300 px-4 py-2">BERT + SpaCy NER</td>
-                      <td className="border border-gray-300 px-4 py-2">Hugging Face, spaCy</td>
-                      <td className="border border-gray-300 px-4 py-2"><strong>92.3% F1</strong></td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Skill Extraction
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>Custom spaCy NER Model</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Superior at understanding context and structure in
+                        unstructured text (CVs, JDs) compared to rule-based
+                        methods. Trained on annotated datasets of CVs and JDs.
+                      </td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2">Gap Detection</td>
-                      <td className="border border-gray-300 px-4 py-2">Cosine Similarity + TF-IDF</td>
-                      <td className="border border-gray-300 px-4 py-2">scikit-learn</td>
-                      <td className="border border-gray-300 px-4 py-2">89%</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Skill Matching
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>
+                          Sentence Transformers (all-MiniLM-L6-v2)
+                        </strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Provides semantic understanding, matching "Python
+                        coding" with "Python development," outperforming
+                        keyword-based (CBF) or collaborative (CF) methods.
+                      </td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2">Assessment Generator</td>
-                      <td className="border border-gray-300 px-4 py-2">Rule-based + GPT-3.5 (fine-tuned)</td>
-                      <td className="border border-gray-300 px-4 py-2">OpenAI API</td>
-                      <td className="border border-gray-300 px-4 py-2">87% relevance</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Course Recommendation
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>XGBoost Regressor</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Initially, Random Forest was tested but showed limited
+                        accuracy. XGBoost was selected for its high performance,
+                        efficiency with tabular data, and built-in
+                        regularization. Trained on web-scraped course data with
+                        features like skill relevance and duration.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Career Forecasting
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>LSTM, ARIMA, Prophet</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        A combination of models was used. LSTM captured complex
+                        temporal patterns in job market data, while ARIMA and
+                        Prophet served as statistical baselines.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Salary Prediction
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>Random Forest</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Chosen for its robustness and good performance on
+                        regression tasks with the available features (job title,
+                        skill match score).
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Quiz Generation
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>LLM (GPT-3.5/4, Gemini)</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Used for their generative capabilities to create
+                        context-aware, personalized quiz questions and to
+                        evaluate open-ended answers semantically.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Facial Emotion Analysis
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>Convolutional Neural Network (CNN)</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        The industry standard for image classification. The
+                        architecture included Conv2D, BatchNorm, MaxPooling, and
+                        Dropout layers, trained on the FER-2013 dataset.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Speech Processing
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>OpenAI Whisper</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        State-of-the-art for accurate speech-to-text
+                        transcription, crucial for converting interview answers
+                        into text for NLP analysis.
+                      </td>
                     </tr>
                   </tbody>
                 </table>
 
-                <h5 className="font-medium mb-2">Function 2: AI Mock Interviews</h5>
+                <h4 className="font-semibold mb-2">
+                  3.5 System Integration and Implementation
+                </h4>
+                <p className="text-muted-foreground leading-relaxed">
+                  The individual modules were integrated into a unified
+                  platform:
+                </p>
+                <ol className="list-decimal list-inside text-muted-foreground leading-relaxed space-y-1">
+                  <li>
+                    <strong>Frontend-Backend Integration:</strong> The Next.js
+                    frontend communicated with the FastAPI/Flask backend via
+                    RESTful APIs.
+                  </li>
+                  <li>
+                    <strong>AI Model Deployment:</strong> Trained models
+                    (XGBoost, spaCy, CNN) were serialized (using joblib, etc.)
+                    and integrated into the backend. The emotion recognition CNN
+                    was deployed for real-time inference using the user's
+                    webcam.
+                  </li>
+                  <li>
+                    <strong>Cloud Deployment:</strong> The entire application
+                    was containerized using <strong>Docker</strong> and deployed
+                    on <strong>Google Cloud Platform (GCP)</strong>,
+                    specifically using <strong>Cloud Run</strong> for
+                    scalability.
+                  </li>
+                  <li>
+                    <strong>Database Integration:</strong>{" "}
+                    <strong>Firebase Firestore</strong> was used for all data
+                    persistence, including user profiles, analysis results, and
+                    interview reports.
+                  </li>
+                </ol>
+
+                <h4 className="font-semibold mb-2">
+                  3.6 Validation, Testing, and Evaluation
+                </h4>
+                <p className="text-muted-foreground leading-relaxed">
+                  A rigorous multi-faceted testing strategy was employed.
+                </p>
                 <table className="w-full border-collapse border border-gray-300 text-sm text-primary">
                   <thead>
                     <tr className="bg-gray-100">
-                      <th className="border border-gray-300 px-4 py-2">Component</th>
-                      <th className="border border-gray-300 px-4 py-2">Model</th>
-                      <th className="border border-gray-300 px-4 py-2">Input</th>
-                      <th className="border border-gray-300 px-4 py-2">Output</th>
+                      <th className="border border-gray-300 px-4 py-2">
+                        Test Type
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2">
+                        Methodology
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2">
+                        Key Findings
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2">Facial Analysis</td>
-                      <td className="border border-gray-300 px-4 py-2">YOLOv8 + FER</td>
-                      <td className="border border-gray-300 px-4 py-2">Video frames</td>
-                      <td className="border border-gray-300 px-4 py-2">Emotion, eye contact</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Model Performance
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>Quantitative Metrics:</strong> Accuracy,
+                        Precision, Recall, F1-Score (Spacy, CNN), RMSE, MAE, R²
+                        (XGBoost).
+                      </td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2">Posture</td>
-                      <td className="border border-gray-300 px-4 py-2">MediaPipe Pose</td>
-                      <td className="border border-gray-300 px-4 py-2">Video</td>
-                      <td className="border border-gray-300 px-4 py-2">Body language score</td>
-                    </tr>
-                    <tr>
-                      <td className="border border-gray-300 px-4 py-2">Speech</td>
-                      <td className="border border-gray-300 px-4 py-2">Whisper (large-v2)</td>
-                      <td className="border border-gray-300 px-4 py-2">Audio</td>
-                      <td className="border border-gray-300 px-4 py-2">Transcript</td>
-                    </tr>
-                    <tr>
-                      <td className="border border-gray-300 px-4 py-2">NLP Scoring</td>
-                      <td className="border border-gray-300 px-4 py-2">RoBERTa + TextBlob</td>
-                      <td className="border border-gray-300 px-4 py-2">Text</td>
-                      <td className="border border-gray-300 px-4 py-2">Clarity, grammar, sentiment</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        User Acceptance Testing
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Pilot studies with IT students, usability surveys.
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        High satisfaction, effective skill gap analysis.
+                      </td>
                     </tr>
                   </tbody>
                 </table>
-
-                <h5 className="font-medium mb-2">Function 3: Personalized Learning</h5>
-                <table className="w-full border-collapse border border-gray-300 text-sm text-muted-foreground">
-                  <thead>
-                    <tr className="bg-gray-100">
-                      <th className="border border-gray-300 px-4 py-2">Model</th>
-                      <th className="border border-gray-300 px-4 py-2">Approach</th>
-                      <th className="border border-gray-300 px-4 py-2">Output</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td className="border border-gray-300 px-4 py-2">Path Recommendation</td>
-                      <td className="border border-gray-300 px-4 py-2">Collaborative Filtering + XGBoost</td>
-                      <td className="border border-gray-300 px-4 py-2">Course ranking</td>
-                    </tr>
-                    <tr>
-                      <td className="border border-gray-300 px-4 py-2">Adaptive Engine</td>
-                      <td className="border border-gray-300 px-4 py-2">Reinforcement Learning (Contextual Bandit)</td>
-                      <td className="border border-gray-300 px-4 py-2">Next module selection</td>
-                    </tr>
-                  </tbody>
-                </table>
-
-                <h5 className="font-medium mb-2">Function 4: Market Forecasting</h5>
-                <table className="w-full border-collapse border border-gray-300 text-sm text-muted-foreground">
-                  <thead>
-                    <tr className="bg-gray-100">
-                      <th className="border border-gray-300 px-4 py-2">Prediction</th>
-                      <th className="border border-gray-300 px-4 py-2">Model</th>
-                      <th className="border border-gray-300 px-4 py-2">Features</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td className="border border-gray-300 px-4 py-2">Job Trends</td>
-                      <td className="border border-gray-300 px-4 py-2">Prophet + LSTM</td>
-                      <td className="border border-gray-300 px-4 py-2">Post volume, keywords</td>
-                    </tr>
-                    <tr>
-                      <td className="border border-gray-300 px-4 py-2">Salary Prediction</td>
-                      <td className="border border-gray-300 px-4 py-2">Gradient Boosting (LightGBM)</td>
-                      <td className="border border-gray-300 px-4 py-2">Role, exp, location</td>
-                    </tr>
-                  </tbody>
-                </table>
-
-                <h4 className="font-semibold mb-2">3.4 Implementation</h4>
-                <ul className="list-disc list-inside text-muted-foreground leading-relaxed space-y-1">
-                  <li><strong>Training</strong>: 80/20 train-test split; 5-fold cross-validation.</li>
-                  <li><strong>Hardware</strong>: GCP VM (n1-standard-8), NVIDIA T4 GPU.</li>
-                  <li><strong>Version Control</strong>: Git + DVC for data versioning.</li>
-                  <li><strong>CI/CD</strong>: GitHub Actions → Cloud Build → Vertex AI Endpoints.</li>
-                </ul>
-
-                <h4 className="font-semibold mb-2">3.5 Evaluation Metrics</h4>
-                <table className="w-full border-collapse border border-gray-300 text-sm text-muted-foreground">
-                  <thead>
-                    <tr className="bg-gray-100">
-                      <th className="border border-gray-300 px-4 py-2">Function</th>
-                      <th className="border border-gray-300 px-4 py-2">Metric</th>
-                      <th className="border border-gray-300 px-4 py-2">Target</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td className="border border-gray-300 px-4 py-2">Skill Extraction</td>
-                      <td className="border border-gray-300 px-4 py-2">F1-Score</td>
-                      <td className="border border-gray-300 px-4 py-2">≥ 90%</td>
-                    </tr>
-                    <tr>
-                      <td className="border border-gray-300 px-4 py-2">Interview Feedback</td>
-                      <td className="border border-gray-300 px-4 py-2">User Agreement (vs HR experts)</td>
-                      <td className="border border-gray-300 px-4 py-2">≥ 85%</td>
-                    </tr>
-                    <tr>
-                      <td className="border border-gray-300 px-4 py-2">Learning Path</td>
-                      <td className="border border-gray-300 px-4 py-2">Completion Rate Increase</td>
-                      <td className="border border-gray-300 px-4 py-2">+30%</td>
-                    </tr>
-                    <tr>
-                      <td className="border border-gray-300 px-4 py-2">Prediction</td>
-                      <td className="border border-gray-300 px-4 py-2">MAE (Salary), RMSE (Trends)</td>
-                      <td className="border border-gray-300 px-4 py-2">{"< 8% error"}</td>
-                    </tr>
-                    <tr>
-                      <td className="border border-gray-300 px-4 py-2">System Usability</td>
-                      <td className="border border-gray-300 px-4 py-2">SUS Score</td>
-                      <td className="border border-gray-300 px-4 py-2">≥ 80</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <p className="text-muted-foreground leading-relaxed mt-2">
-                  <strong>User Study</strong>:
-                </p>
-                <ul className="list-disc list-inside text-muted-foreground leading-relaxed space-y-1">
-                  <li><strong>Participants</strong>: 150 final-year IT undergraduates</li>
-                  <li><strong>Design</strong>: Pre/Post intervention (control vs treatment group)</li>
-                  <li><strong>Duration</strong>: 12 weeks</li>
-                  <li><strong>Instruments</strong>: SUS questionnaire, mock interview success rate, job application outcomes</li>
-                </ul>
-
-                <h4 className="font-semibold mb-2">3.6 Ethical Considerations</h4>
-                <ul className="list-disc list-inside text-muted-foreground leading-relaxed space-y-1">
-                  <li><strong>Data Privacy</strong>: GDPR-compliant; anonymized CVs; consent forms.</li>
-                  <li><strong>Bias Mitigation</strong>: Balanced dataset (gender, region); fairness audits using AIF360.</li>
-                  <li><strong>Transparency</strong>: Explainable AI (SHAP values) for recommendations.</li>
-                </ul>
-
-                <div>
-                  <h4 className="font-semibold mb-2">References (Methodology – IEEE Format)</h4>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>[1] K. Peffers, T. Tuunanen, M. A. Rothenberger, and S. Chatterjee, "A Design Science Research Methodology for Information Systems Research," *J. Manag. Inf. Syst.*, vol. 24, no. 3, pp. 45–77, Winter 2007. → DSRM framework.</li>
-                    <li>[2] M. Honnibal and I. Montani, "spaCy: Industrial-strength Natural Language Processing in Python," Explosion, 2020. [Online]. Available: https://spacy.io → NLP pipeline.</li>
-                    <li>[3] J. Redmon and A. Farhadi, "YOLOv3: An Incremental Improvement," arXiv preprint arXiv:1804.02767, 2018. → Vision models.</li>
-                    <li>[4] OpenAI, "Whisper: Robust Speech Recognition via Large-Scale Weak Supervision," 2022. [Online]. Available: https://github.com/openai/whisper → Audio transcription.</li>
-                    <li>[5] T. Chen and C. Guestrin, "XGBoost: A Scalable Tree Boosting System," in *Proc. 22nd ACM SIGKDD*, San Francisco, CA, USA, 2016, pp. 785–794. → Predictive modeling.</li>
-                  </ul>
-                </div>
               </div>
             </CardContent>
           </Card>
@@ -794,43 +1054,86 @@ export default function Domain() {
                   <em>(IEEE-Style – Section 2.4 or 3.2 in Research Paper)</em>
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  The development of <em>Skill Bridge AI</em> integrates a modern, scalable, and AI-centric technology stack to ensure high performance, real-time processing, and seamless user experience. The system is designed using <strong>industry-standard tools</strong> for frontend, backend, AI/ML, cloud infrastructure, and data management, enabling rapid prototyping, deployment, and maintenance.
+                  The development of <em>Skill Bridge AI</em> integrates a
+                  modern, scalable, and AI-centric technology stack to ensure
+                  high performance, real-time processing, and seamless user
+                  experience. The system is designed using{" "}
+                  <strong>industry-standard tools</strong> for frontend,
+                  backend, AI/ML, cloud infrastructure, and data management,
+                  enabling rapid prototyping, deployment, and maintenance.
                 </p>
 
-                <h4 className="font-semibold mb-2">4.1 Frontend Technologies</h4>
+                <h4 className="font-semibold mb-2">
+                  4.1 Frontend Technologies
+                </h4>
                 <table className="w-full border-collapse border border-gray-300 text-base text-foreground">
                   <thead>
                     <tr className="bg-gray-100">
-                      <th className="border border-gray-300 px-4 py-2 font-semibold">Tool</th>
-                      <th className="border border-gray-300 px-4 py-2 font-semibold">Purpose</th>
-                      <th className="border border-gray-300 px-4 py-2 font-semibold">Version</th>
+                      <th className="border border-gray-300 px-4 py-2 font-semibold">
+                        Tool
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2 font-semibold">
+                        Purpose
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2 font-semibold">
+                        Version
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>Next.js</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">Server-side rendered React framework for responsive dashboard</td>
-                      <td className="border border-gray-300 px-4 py-2">v14.2</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>Next.js</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Server-side rendered React framework for responsive
+                        dashboard
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        v14.2
+                      </td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>Tailwind CSS</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">Utility-first styling for fast, customizable UI</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>Tailwind CSS</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Utility-first styling for fast, customizable UI
+                      </td>
                       <td className="border border-gray-300 px-4 py-2">v3.4</td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>Chart.js / Recharts</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">Interactive data visualization (skill gaps, trends)</td>
-                      <td className="border border-gray-300 px-4 py-2">v4.4 / v2.12</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>Chart.js / Recharts</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Interactive data visualization (skill gaps, trends)
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        v4.4 / v2.12
+                      </td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>React Hook Form</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">Efficient form handling (CV upload, quiz)</td>
-                      <td className="border border-gray-300 px-4 py-2">v7.51</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>React Hook Form</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Efficient form handling (CV upload, quiz)
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        v7.51
+                      </td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>Framer Motion</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">Smooth animations and micro-interactions</td>
-                      <td className="border border-gray-300 px-4 py-2">v11.1</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>Framer Motion</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Smooth animations and micro-interactions
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        v11.1
+                      </td>
                     </tr>
                   </tbody>
                 </table>
@@ -839,94 +1142,178 @@ export default function Domain() {
                 <table className="w-full border-collapse border border-gray-300 text-base text-foreground">
                   <thead>
                     <tr className="bg-gray-100">
-                      <th className="border border-gray-300 px-4 py-2 font-semibold">Tool</th>
-                      <th className="border border-gray-300 px-4 py-2 font-semibold">Purpose</th>
-                      <th className="border border-gray-300 px-4 py-2 font-semibold">Version</th>
+                      <th className="border border-gray-300 px-4 py-2 font-semibold">
+                        Tool
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2 font-semibold">
+                        Purpose
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2 font-semibold">
+                        Version
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>FastAPI</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">High-performance Python API framework</td>
-                      <td className="border border-gray-300 px-4 py-2">v0.115</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>FastAPI</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        High-performance Python API framework
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        v0.115
+                      </td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>Uvicorn + Gunicorn</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">ASGI server for production deployment</td>
-                      <td className="border border-gray-300 px-4 py-2">v0.30 / v22.0</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>Uvicorn + Gunicorn</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        ASGI server for production deployment
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        v0.30 / v22.0
+                      </td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>Pydantic</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">Data validation and settings management</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>Pydantic</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Data validation and settings management
+                      </td>
                       <td className="border border-gray-300 px-4 py-2">v2.8</td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>JWT + OAuth2</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">Secure authentication</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>JWT + OAuth2</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Secure authentication
+                      </td>
                       <td className="border border-gray-300 px-4 py-2">–</td>
                     </tr>
                   </tbody>
                 </table>
 
-                <h4 className="font-semibold mb-2">4.3 AI & Machine Learning</h4>
+                <h4 className="font-semibold mb-2">
+                  4.3 AI & Machine Learning
+                </h4>
                 <table className="w-full border-collapse border border-gray-300 text-base text-foreground">
                   <thead>
                     <tr className="bg-gray-100">
-                      <th className="border border-gray-300 px-4 py-2 font-semibold">Tool</th>
-                      <th className="border border-gray-300 px-4 py-2 font-semibold">Function</th>
-                      <th className="border border-gray-300 px-4 py-2 font-semibold">Version</th>
+                      <th className="border border-gray-300 px-4 py-2 font-semibold">
+                        Tool
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2 font-semibold">
+                        Function
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2 font-semibold">
+                        Version
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>Python</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">Core programming language</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>Python</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Core programming language
+                      </td>
                       <td className="border border-gray-300 px-4 py-2">3.11</td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>spaCy</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">NLP pipeline, NER, text processing</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>spaCy</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        NLP pipeline, NER, text processing
+                      </td>
                       <td className="border border-gray-300 px-4 py-2">v3.7</td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>Transformers (Hugging Face)</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">BERT, RoBERTa for skill extraction & sentiment</td>
-                      <td className="border border-gray-300 px-4 py-2">v4.44</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>Transformers (Hugging Face)</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        BERT, RoBERTa for skill extraction & sentiment
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        v4.44
+                      </td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>YOLOv8</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">Real-time facial emotion & eye tracking</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>YOLOv8</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Real-time facial emotion & eye tracking
+                      </td>
                       <td className="border border-gray-300 px-4 py-2">v8.2</td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>MediaPipe</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">Body posture and gesture analysis</td>
-                      <td className="border border-gray-300 px-4 py-2">v0.10</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>MediaPipe</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Body posture and gesture analysis
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        v0.10
+                      </td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>Whisper (OpenAI)</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">Speech-to-text transcription</td>
-                      <td className="border border-gray-300 px-4 py-2">large-v3</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>Whisper (OpenAI)</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Speech-to-text transcription
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        large-v3
+                      </td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>XGBoost / LightGBM</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">Salary & course recommendation models</td>
-                      <td className="border border-gray-300 px-4 py-2">v2.1 / v4.5</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>XGBoost / LightGBM</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Salary & course recommendation models
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        v2.1 / v4.5
+                      </td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>Prophet</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">Time-series job trend forecasting</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>Prophet</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Time-series job trend forecasting
+                      </td>
                       <td className="border border-gray-300 px-4 py-2">v1.1</td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>scikit-learn</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">Preprocessing, similarity, evaluation</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>scikit-learn</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Preprocessing, similarity, evaluation
+                      </td>
                       <td className="border border-gray-300 px-4 py-2">v1.5</td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>SHAP</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">Model explainability</td>
-                      <td className="border border-gray-300 px-4 py-2">v0.46</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>SHAP</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Model explainability
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        v0.46
+                      </td>
                     </tr>
                   </tbody>
                 </table>
@@ -935,161 +1322,304 @@ export default function Domain() {
                 <table className="w-full border-collapse border border-gray-300 text-base text-foreground">
                   <thead>
                     <tr className="bg-gray-100">
-                      <th className="border border-gray-300 px-4 py-2 font-semibold">Tool</th>
-                      <th className="border border-gray-300 px-4 py-2 font-semibold">Purpose</th>
-                      <th className="border border-gray-300 px-4 py-2 font-semibold">Region</th>
+                      <th className="border border-gray-300 px-4 py-2 font-semibold">
+                        Tool
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2 font-semibold">
+                        Purpose
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2 font-semibold">
+                        Region
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>Google Cloud Platform (GCP)</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">Hosting, AI, scalability</td>
-                      <td className="border border-gray-300 px-4 py-2">asia-south1</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>Google Cloud Platform (GCP)</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Hosting, AI, scalability
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        asia-south1
+                      </td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>Vertex AI</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">Model training, serving, AutoML</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>Vertex AI</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Model training, serving, AutoML
+                      </td>
                       <td className="border border-gray-300 px-4 py-2">–</td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>Cloud Storage</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">Store CVs, videos, reports</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>Cloud Storage</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Store CVs, videos, reports
+                      </td>
                       <td className="border border-gray-300 px-4 py-2">–</td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>Cloud Functions</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">Trigger-based processing (e.g., CV upload → analysis)</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>Cloud Functions</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Trigger-based processing (e.g., CV upload → analysis)
+                      </td>
                       <td className="border border-gray-300 px-4 py-2">–</td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>Firebase Authentication</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">User login (Google, Email)</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>Firebase Authentication</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        User login (Google, Email)
+                      </td>
                       <td className="border border-gray-300 px-4 py-2">–</td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>Firestore</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">Real-time NoSQL database</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>Firestore</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Real-time NoSQL database
+                      </td>
                       <td className="border border-gray-300 px-4 py-2">–</td>
                     </tr>
                   </tbody>
                 </table>
 
-                <h4 className="font-semibold mb-2">4.5 Data Processing & Utilities</h4>
+                <h4 className="font-semibold mb-2">
+                  4.5 Data Processing & Utilities
+                </h4>
                 <table className="w-full border-collapse border border-gray-300 text-base text-foreground">
                   <thead>
                     <tr className="bg-gray-100">
-                      <th className="border border-gray-300 px-4 py-2 font-semibold">Tool</th>
-                      <th className="border border-gray-300 px-4 py-2 font-semibold">Purpose</th>
+                      <th className="border border-gray-300 px-4 py-2 font-semibold">
+                        Tool
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2 font-semibold">
+                        Purpose
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>PyMuPDF / pdfplumber</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">PDF to text extraction</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>PyMuPDF / pdfplumber</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        PDF to text extraction
+                      </td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>BeautifulSoup / Scrapy</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">Web scraping job listings</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>BeautifulSoup / Scrapy</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Web scraping job listings
+                      </td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>Pandas / NumPy</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">Data manipulation</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>Pandas / NumPy</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Data manipulation
+                      </td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>OpenCV</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">Video frame processing</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>OpenCV</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Video frame processing
+                      </td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>ffmpeg</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">Audio extraction from video</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>ffmpeg</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Audio extraction from video
+                      </td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>DVC (Data Version Control)</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">Dataset versioning</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>DVC (Data Version Control)</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Dataset versioning
+                      </td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>MLflow</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">Experiment tracking</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>MLflow</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Experiment tracking
+                      </td>
                     </tr>
                   </tbody>
                 </table>
 
-                <h4 className="font-semibold mb-2">4.6 Development & Collaboration</h4>
+                <h4 className="font-semibold mb-2">
+                  4.6 Development & Collaboration
+                </h4>
                 <table className="w-full border-collapse border border-gray-300 text-base text-foreground">
                   <thead>
                     <tr className="bg-gray-100">
-                      <th className="border border-gray-300 px-4 py-2 font-semibold">Tool</th>
-                      <th className="border border-gray-300 px-4 py-2 font-semibold">Purpose</th>
+                      <th className="border border-gray-300 px-4 py-2 font-semibold">
+                        Tool
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2 font-semibold">
+                        Purpose
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>Git + GitHub</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">Version control</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>Git + GitHub</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Version control
+                      </td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>GitHub Actions</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">CI/CD pipeline</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>GitHub Actions</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        CI/CD pipeline
+                      </td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>Docker</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">Containerization</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>Docker</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Containerization
+                      </td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>Postman</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">API testing</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>Postman</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        API testing
+                      </td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>Jupyter Notebook</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">Model prototyping</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>Jupyter Notebook</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Model prototyping
+                      </td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>VS Code</strong></td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>VS Code</strong>
+                      </td>
                       <td className="border border-gray-300 px-4 py-2">IDE</td>
                     </tr>
                   </tbody>
                 </table>
 
-                <h4 className="font-semibold mb-2">4.7 Deployment & Monitoring</h4>
+                <h4 className="font-semibold mb-2">
+                  4.7 Deployment & Monitoring
+                </h4>
                 <table className="w-full border-collapse border border-gray-300 text-base text-foreground">
                   <thead>
                     <tr className="bg-gray-100">
-                      <th className="border border-gray-300 px-4 py-2 font-semibold">Tool</th>
-                      <th className="border border-gray-300 px-4 py-2 font-semibold">Purpose</th>
+                      <th className="border border-gray-300 px-4 py-2 font-semibold">
+                        Tool
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2 font-semibold">
+                        Purpose
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>GCP Cloud Build</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">Automated deployment</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>GCP Cloud Build</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Automated deployment
+                      </td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>Cloud Logging & Monitoring</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">Performance tracking</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>Cloud Logging & Monitoring</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Performance tracking
+                      </td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>Sentry</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">Error monitoring</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>Sentry</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        Error monitoring
+                      </td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2"><strong>Google Analytics</strong></td>
-                      <td className="border border-gray-300 px-4 py-2">User behavior insights</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <strong>Google Analytics</strong>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        User behavior insights
+                      </td>
                     </tr>
                   </tbody>
                 </table>
 
                 <p className="text-muted-foreground leading-relaxed mt-4">
-                  <strong>Technology Stack Summary (One Liner):</strong> <em>Next.js + FastAPI + GCP Vertex AI + spaCy + YOLOv8 + Firebase</em>
+                  <strong>Technology Stack Summary (One Liner):</strong>{" "}
+                  <em>
+                    Next.js + FastAPI + GCP Vertex AI + spaCy + YOLOv8 +
+                    Firebase
+                  </em>
                 </p>
 
                 <div>
-                  <h4 className="font-semibold mb-2">References (Tools & Technologies – IEEE Format)</h4>
+                  <h4 className="font-semibold mb-2">
+                    References (Tools & Technologies – IEEE Format)
+                  </h4>
                   <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>[1] M. Honnibal and I. Montani, "spaCy: Industrial-strength Natural Language Processing in Python," Explosion, 2020. [Online]. Available: https://spacy.io</li>
-                    <li>[2] Ultralytics, "YOLOv8: State-of-the-Art Object Detection," GitHub Repository, 2023. [Online]. Available: https://github.com/ultralytics/ultralytics</li>
-                    <li>[3] OpenAI, "Whisper: Robust Speech Recognition via Large-Scale Weak Supervision," GitHub, 2022. [Online]. Available: https://github.com/openai/whisper</li>
-                    <li>[4] Google Cloud, "Vertex AI Documentation," Google Cloud Platform, 2025. [Online]. Available: https://cloud.google.com/vertex-ai</li>
-                    <li>[5] T. Chen and C. Guestrin, "XGBoost: A Scalable Tree Boosting System," in *Proc. 22nd ACM SIGKDD*, San Francisco, CA, USA, 2016, pp. 785–794.</li>
+                    <li>
+                      [1] M. Honnibal and I. Montani, "spaCy:
+                      Industrial-strength Natural Language Processing in
+                      Python," Explosion, 2020. [Online]. Available:
+                      https://spacy.io
+                    </li>
+                    <li>
+                      [2] Ultralytics, "YOLOv8: State-of-the-Art Object
+                      Detection," GitHub Repository, 2023. [Online]. Available:
+                      https://github.com/ultralytics/ultralytics
+                    </li>
+                    <li>
+                      [3] OpenAI, "Whisper: Robust Speech Recognition via
+                      Large-Scale Weak Supervision," GitHub, 2022. [Online].
+                      Available: https://github.com/openai/whisper
+                    </li>
+                    <li>
+                      [4] Google Cloud, "Vertex AI Documentation," Google Cloud
+                      Platform, 2025. [Online]. Available:
+                      https://cloud.google.com/vertex-ai
+                    </li>
+                    <li>
+                      [5] T. Chen and C. Guestrin, "XGBoost: A Scalable Tree
+                      Boosting System," in *Proc. 22nd ACM SIGKDD*, San
+                      Francisco, CA, USA, 2016, pp. 785–794.
+                    </li>
                   </ul>
                 </div>
               </div>
