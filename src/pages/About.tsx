@@ -162,7 +162,7 @@ export default function About() {
                     Ms. Sanjeevi Chandrasiri
                   </CardTitle>
                   <CardDescription className="text-lg text-accent-foreground">
-                    Supervisor
+                    Project Supervisor
                   </CardDescription>
                 </div>
               </CardHeader>
