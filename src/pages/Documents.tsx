@@ -62,7 +62,15 @@ export default function Documents() {
       },
     ],
     checklists: [
-      { name: "Status Documents I", date: "Feb 2025", size: "156 KB" },
+      {
+        name: "Status Documents I",
+        date: "Feb 2025",
+        size: "156 KB",
+        viewUrl:
+          "https://docs.google.com/spreadsheets/d/1QhhDxdKdOXL9lCxIkZCA63R0uaqlCL3_/edit?usp=sharing",
+        downloadUrl:
+          "https://docs.google.com/spreadsheets/d/1QhhDxdKdOXL9lCxIkZCA63R0uaqlCL3_/export?format=xlsx",
+      },
       { name: "Status Documents II", date: "Mar 2025", size: "189 KB" },
     ],
     final: [
