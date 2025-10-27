@@ -185,7 +185,7 @@ export default function Documents() {
                 onClick={() => window.open(doc.viewUrl, "_blank")}
               >
                 <Eye className="h-4 w-4" />
-                View Slides
+                View Document
               </Button>
             )}
             {doc.downloadUrl && (
