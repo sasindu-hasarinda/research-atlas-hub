@@ -18,9 +18,9 @@ export default function Documents() {
         date: "Jan 2025",
         size: "2.4 MB",
         viewUrl:
-          "https://drive.google.com/file/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs/view?usp=sharing",
+          "https://docs.google.com/document/d/1kGP9GBqKVgCqw92VCKiblF5myQQ6HhW3/edit?usp=sharing",
         downloadUrl:
-          "https://drive.google.com/uc?export=download&id=1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs",
+          "https://docs.google.com/document/d/1kGP9GBqKVgCqw92VCKiblF5myQQ6HhW3/export?format=pdf",
       },
     ],
     proposal: [
