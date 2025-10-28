@@ -67,11 +67,19 @@ export default function Documents() {
         date: "Feb 2025",
         size: "156 KB",
         viewUrl:
-          "https://docs.google.com/spreadsheets/d/1QhhDxdKdOXL9lCxIkZCA63R0uaqlCL3_/edit?usp=sharing",
+          "https://drive.google.com/file/d/1LUmg0-U79L9DNb_DNBsmexA1YRg-GAiC/view?usp=sharing",
         downloadUrl:
-          "https://docs.google.com/spreadsheets/d/1QhhDxdKdOXL9lCxIkZCA63R0uaqlCL3_/export?format=xlsx",
+          "https://drive.google.com/uc?export=download&id=1LUmg0-U79L9DNb_DNBsmexA1YRg-GAiC",
       },
-      { name: "Status Documents II", date: "Mar 2025", size: "189 KB" },
+      {
+        name: "Status Documents II",
+        date: "Mar 2025",
+        size: "189 KB",
+        viewUrl:
+          "https://drive.google.com/file/d/1LUmg0-U79L9DNb_DNBsmexA1YRg-GAiC/view?usp=sharing",
+        downloadUrl:
+          "https://drive.google.com/uc?export=download&id=1LUmg0-U79L9DNb_DNBsmexA1YRg-GAiC",
+      },
     ],
     final: [
       {
@@ -142,6 +150,10 @@ export default function Documents() {
         name: "Research Paper Document",
         date: "Apr 2025",
         size: "2.1 MB",
+        viewUrl:
+          "https://drive.google.com/file/d/1T1RAz76J1B5BN4mj6iOpSEQonZtewxzl/view?usp=sharing",
+        downloadUrl:
+          "https://drive.google.com/uc?export=download&id=1T1RAz76J1B5BN4mj6iOpSEQonZtewxzl",
       },
     ] as {
       name: string;
