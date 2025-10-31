@@ -53,11 +53,15 @@ export default function Presentations() {
     {
       title: "Final Presentation",
       date: "May 22, 2025",
-      slides: 0,
+      slides: 40,
       duration: "45 min",
       status: "completed",
       description:
         "Comprehensive final presentation with complete results and conclusions",
+      viewUrl:
+        "https://docs.google.com/presentation/d/1F-rseCHWdAX6EPUQ9csbgWy6hYsjm9_o/edit?usp=sharing&ouid=108320701124573512396&rtpof=true&sd=true",
+      downloadUrl:
+        "https://drive.google.com/uc?export=download&id=1F-rseCHWdAX6EPUQ9csbgWy6hYsjm9_o",
     },
   ];
 
