@@ -349,7 +349,7 @@ export default function Domain() {
           </Card>
 
           {/* Research Objectives */}
-          <Card>
+          <Card className="border-2 border-primary shadow-lg">
             <CardHeader>
               <div className="flex items-center gap-3">
                 <div className="p-2 rounded-lg bg-gradient-to-br from-primary/10 to-accent/10">
@@ -369,11 +369,17 @@ export default function Domain() {
                 <p className="text-muted-foreground leading-relaxed">
                   The primary aim of this research is to design, develop, and
                   evaluate an AI-integrated, end-to-end career readiness
-                  platform tailored for Sri Lankan IT graduates. The specific
-                  objectives are:
+                  platform tailored for Sri Lankan IT graduates.
                 </p>
-                <ul className="list-disc list-inside text-muted-foreground leading-relaxed space-y-2">
-                  <li>
+                <p className="text-muted-foreground leading-relaxed">
+                  The specific objectives are:
+                </p>
+                <ol className="list-decimal list-inside text-muted-foreground leading-relaxed space-y-2">
+                  <li className="bg-yellow-100 p-2 rounded">
+                    <strong>
+                      Skill Extraction and Gap Analysis — M.G.S.H. Karunathilaka
+                    </strong>
+                    <br />
                     To develop an AI-driven skill extraction and gap analysis
                     system that automatically parses unstructured CVs using NLP
                     and NER models to identify technical (e.g., Python, AWS) and
@@ -381,7 +387,11 @@ export default function Domain() {
                     them against real-time industry benchmarks to generate
                     actionable skill deficiency reports.
                   </li>
-                  <li>
+                  <li className="bg-yellow-100 p-2 rounded">
+                    <strong>
+                      AI-powered Mock Interview System — Madushan J. M. T
+                    </strong>
+                    <br />
                     To implement a multimodal AI-powered mock interview system
                     that evaluates candidates using computer vision (YOLO,
                     facial emotion recognition), speech-to-text (Whisper), and
@@ -389,7 +399,12 @@ export default function Domain() {
                     industry-standard feedback on technical accuracy, clarity,
                     confidence, and body language.
                   </li>
-                  <li>
+                  <li className="bg-yellow-100 p-2 rounded">
+                    <strong>
+                      Adaptive Personalized Learning Pathway Engine — Ekanayake
+                      T. E. M. A. P
+                    </strong>
+                    <br />
                     To design an adaptive personalized learning pathway engine
                     that dynamically recommends and adjusts learning content
                     (courses, modules, assessments) based on individual skill
@@ -397,7 +412,12 @@ export default function Domain() {
                     regression-based ranking and reinforcement learning
                     principles.
                   </li>
-                  <li>
+                  <li className="bg-yellow-100 p-2 rounded">
+                    <strong>
+                      Predictive IT Job Market Intelligence Dashboard — Dias N.
+                      T. G. P
+                    </strong>
+                    <br />
                     To build a predictive IT job market intelligence dashboard
                     that forecasts emerging job roles, salary trends, and skill
                     demand over the next 5 years using time-series analysis,
@@ -405,14 +425,7 @@ export default function Domain() {
                     machine learning models to deliver personalized career
                     insights.
                   </li>
-                  <li>
-                    To evaluate the effectiveness of the integrated platform in
-                    improving graduate employability through controlled user
-                    studies, measuring improvements in interview success rate,
-                    skill mastery, job placement time, and user satisfaction
-                    against baseline career tools.
-                  </li>
-                </ul>
+                </ol>
               </div>
             </CardContent>
           </Card>

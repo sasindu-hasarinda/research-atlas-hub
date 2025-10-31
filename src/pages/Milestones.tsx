@@ -177,7 +177,7 @@ export default function Milestones() {
           <CardContent>
             <div className="grid sm:grid-cols-3 gap-4">
               <div className="text-center">
-                <p className="text-3xl font-bold text-green-500">0</p>
+                <p className="text-3xl font-bold text-green-500">8</p>
                 <p className="text-sm text-muted-foreground">Completed</p>
               </div>
               <div className="text-center">
@@ -185,7 +185,7 @@ export default function Milestones() {
                 <p className="text-sm text-muted-foreground">In Progress</p>
               </div>
               <div className="text-center">
-                <p className="text-3xl font-bold text-blue-500">8</p>
+                <p className="text-3xl font-bold text-blue-500">0</p>
                 <p className="text-sm text-muted-foreground">Available</p>
               </div>
             </div>
