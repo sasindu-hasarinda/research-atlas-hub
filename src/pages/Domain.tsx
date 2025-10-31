@@ -131,6 +131,7 @@ export default function Domain() {
                   src="/images/System.jpg"
                   alt="Overall System Diagram"
                   className="max-w-full h-auto rounded-lg shadow-lg"
+                  loading="lazy"
                 />
               </div>
             </CardContent>
